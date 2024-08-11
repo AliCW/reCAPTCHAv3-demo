@@ -1,0 +1,6 @@
+.env
+db.sqlite3
+node_modules
+test_demo/migrations
+test_demo/__pycache__
+reCAPTCHAv3/__pycache__
