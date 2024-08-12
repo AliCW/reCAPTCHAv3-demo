@@ -6,11 +6,14 @@ from .models import SendKey
 import requests
 from django.views.decorators.csrf import csrf_exempt
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 class ReCaptchaV3:
     @csrf_exempt
     def check(request):
-        key = 'test'
-        return HttpResponse(key)
-        #checkCAPTCHA = requests.post('https://www.google.com/recaptcha/api/siteverify', data={'secret': key, 'response': request})
-        #return HttpResponse(checkCAPTCHA)
+        key = SendKey.objects.all()
+        #return HttpResponse(key)
+        checkCAPTCHA = requests.post('https://www.google.com/recaptcha/api/siteverify', data={'secret': key, 'response': request})
+        return HttpResponse(checkCAPTCHA)

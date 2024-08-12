@@ -4,12 +4,12 @@ import Main from './components/Main.jsx';
 import css from './App.css';
 
 
-export default function App(){
+export default function App(props){
 
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Main/>} />
+                <Route path="/" element={<Main />} />
             </Routes>
 
         </div>

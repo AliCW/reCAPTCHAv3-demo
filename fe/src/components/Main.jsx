@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import Result from './Result.jsx';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
+
 
 export default function Main() {
-    const [buttonResolve, sendButtonResolve] = useState(false)
+    const [showResult, setShowResult] = useState(false);
 
     const handleResolve = () => {
-        sendButtonResolve(!buttonResolve);
+        setShowResult(!showResult);
     };
 
     return (
         <div>
-            <p className="title">RIGHT HERE, RIGHT NOW</p>
-
-            <button className="input" onClick={handleResolve}> Resolve </button>
-
-            {buttonResolve === true && <Result/>}
+            <p className="title">title</p>
+            <button onClick={handleResolve}>Show Result</button>
+            <GoogleReCaptchaProvider reCaptchaKey="6LdIYyQqAAAAAGPIC7CuubHIDYXm-a1moGU46g_l">
+                {showResult && <Result />}
+            </GoogleReCaptchaProvider>
+        
         </div>
     )
-
 };

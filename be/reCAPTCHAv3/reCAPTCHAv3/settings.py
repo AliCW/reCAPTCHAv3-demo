@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'test_demo.apps.TestDemoConfig',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,6 +73,11 @@ TEMPLATES = [
     },
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
+
+
 WSGI_APPLICATION = 'reCAPTCHAv3.wsgi.application'
 
 
@@ -83,6 +90,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://192.168.1.174:3000']
 
 
 # Password validation
