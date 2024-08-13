@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.js';
 
 
-window.addEventListener("DOMContentLoaded", function (e) {
+window.addEventListener("DOMContentLoaded", function () {
     ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
             <App/>

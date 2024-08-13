@@ -9,7 +9,6 @@ export default function Result() {
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-
     const handleReCaptchaVerify = useCallback(async () => {
         setChecking(true);
         if (!executeRecaptcha) {
@@ -30,11 +29,9 @@ export default function Result() {
     return (
         <div>
             <br></br>
-            {/* <button onClick={handleReCaptchaVerify}> Force Token </button> */}
             {checking === true && <p>LOADING</p>}
             <br></br>
             <Response props={result} />
         </div>
     )
-
 };

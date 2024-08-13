@@ -3,7 +3,14 @@ reCAPTCHA v3 demonstration
 
 # fe
 
+The frontend is React, utilizing webpack. navigate to `/fe` and run:
 
+    npm install
+
+
+To start the frontend, run:
+
+    npm start
 
 
 # be
@@ -12,7 +19,7 @@ Cover django secret key as the first thing with dotenv
 
     python3 pip install python-dotenv
 
-Create a `.env` file in ` \reCAPTCHAv3\ ` and add the below:
+Create a `.env` file in ` \reCAPTCHAv3\ ` (not ` \reCAPTCHAv3\reCAPTCHAv3\ `)and add the below:
 
     SITE_KEY = '<google_api_key_here>'
 

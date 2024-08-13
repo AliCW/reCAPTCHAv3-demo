@@ -12,7 +12,7 @@ export default function Main() {
 
     return (
         <div>
-            <p className="title">reCAPTCHA-v3</p>
+            <h1 className="title">reCAPTCHA-v3</h1>
             <button onClick={handleResolve}>Load reCAPTCHA-v3</button>
             <GoogleReCaptchaProvider reCaptchaKey="6LdIYyQqAAAAAGPIC7CuubHIDYXm-a1moGU46g_l">
                 {load && <Result />}
