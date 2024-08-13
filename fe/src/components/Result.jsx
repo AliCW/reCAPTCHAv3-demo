@@ -5,21 +5,22 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function Result() {
     const [result, setResult] = useState('');
-    const [buttonResolve, sendButtonResolve] = useState(false);
+    const [checking, setChecking] = useState(false);
+
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-    const handleResolve = () => {
-        sendButtonResolve(!buttonResolve);
-    };
 
     const handleReCaptchaVerify = useCallback(async () => {
+        setChecking(true);
         if (!executeRecaptcha) {
           console.log('captcha awaiting execution');
           return;
-        }
+        };
     
         const token = await executeRecaptcha();
-        setResult(token)
+        setResult(token);
+        setChecking(false);
+        
     }, [executeRecaptcha]);
       
     useEffect(() => {
@@ -28,12 +29,11 @@ export default function Result() {
     
     return (
         <div>
-            <p>Result Here</p>
-            
-            <button onClick={handleReCaptchaVerify}> Check Token </button>
             <br></br>
-            <button className="input" onClick={handleResolve}> Show Result </button>
-            {buttonResolve && <Response props={result} />}
+            {/* <button onClick={handleReCaptchaVerify}> Force Token </button> */}
+            {checking === true && <p>LOADING</p>}
+            <br></br>
+            <Response props={result} />
         </div>
     )
 

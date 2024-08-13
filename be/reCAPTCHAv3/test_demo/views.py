@@ -14,6 +14,5 @@ class ReCaptchaV3:
     @csrf_exempt
     def check(request):
         key = SendKey.objects.all()
-        #return HttpResponse(key)
         checkCAPTCHA = requests.post('https://www.google.com/recaptcha/api/siteverify', data={'secret': key, 'response': request})
         return HttpResponse(checkCAPTCHA)
