@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback }  from 'react';
 import Response from './Response.jsx';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import FadeLoader from "react-spinners/FadeLoader";
 
 
 export default function Result() {
@@ -29,7 +30,7 @@ export default function Result() {
     return (
         <div>
             <br></br>
-            {checking === true && <p>LOADING</p>}
+            {checking === true && <FadeLoader className="loader" color="#ffffff"/>}
             <br></br>
             <Response props={result} />
         </div>

@@ -23,7 +23,7 @@ export default function Response({ props }) {
 
     return (
         <div>
-            <button onClick={handleSubmit}> Check Results </button>
+            <button className="button" onClick={handleSubmit}> Check Results </button>
             {showOutput && <Display props={output}/>}
         </div>
     )

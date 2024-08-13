@@ -1,4 +1,66 @@
 .App{
+    margin: auto;
     text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: Helvetica, sans-serif;
 }
 
+html {
+    background: url('./backgrounds/black-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+.header {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    font-family: Helvetica, sans-serif;
+    color: rgb(255, 150, 232);
+  }
+
+.loader{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin: auto;
+}
+
+.button {
+    transition-duration: 0.17s;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 153, 255);
+    border: none;
+    display: inline-grid;
+    text-decoration: none;
+    text-align: center;
+    width: 25%;
+    height: 25%;
+    padding: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    letter-spacing: 3.5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-family: Helvetica, sans-serif;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    color: rgb(255, 0, 200);
+    transition-duration: 0.50s;
+  }
+  
+  .button:active {
+    color: rgba(0, 153, 255, 0.788);
+  }
+
+  .details{
+    font-family: sans-serif;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    color: rgb(255, 150, 232);
+    font-size: 0.9em;
+  }

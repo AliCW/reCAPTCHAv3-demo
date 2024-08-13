@@ -1,15 +1,18 @@
 import React from 'react';
+import formatErrors from '../utils/formatErrors';
+import formatTime from '../utils/formatTime';
 
 export default function Display({ props }){
 
     return (
-        <div>
+        <div className="details">
             {
             (props.data.success)
             ? 
             <div key={props.config.data}>
-                <p>Pass!</p>
+                <p className="details-title">Pass!</p>
                 <p>Score: {props.data.score}</p>
+                <p>Challenge Time: {formatTime(props.data.challenge_ts)}</p>
             </div>
             : 
             <div>
@@ -17,14 +20,14 @@ export default function Display({ props }){
             {props.data["error-codes"].map((errorCode) => {
                 return (
                     <div key={props.config.data}>
-                        <p>{errorCode}</p>
+                        <p>{formatErrors(errorCode)}</p>
                     </div>
                 )
             })}
             </div>
             }
 
-            {/* {console.log(props, "props")} */}
+            {console.log(props, "props")}
 
         </div>
     )
