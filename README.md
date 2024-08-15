@@ -1,5 +1,5 @@
 # reCAPTCHAv3-demo
-Google reCAPTCHA v3 demonstration (https://www.google.com/recaptcha/about/) utilising a backend in Django & frontend in React JS & webpack (https://webpack.js.org/). Success & failure messages are passed to the user with a passing score, datestamp and failure message (if applicable).
+Google reCAPTCHA-v3 demonstration (https://www.google.com/recaptcha/about/) utilising a backend in Django & frontend with React JS & webpack (https://webpack.js.org/). Success & failure messages are passed to the user with a passing score, datestamp and failure message (if applicable).
 
 # Setup
 
@@ -7,15 +7,15 @@ Clone the repository:
 
     git clone https://github.com/AliCW/reCAPTCHAv3-demo.git
 
-Register a new site with reCAPTCHA & select version 3 (https://www.google.com/recaptcha/admin/create) - for the purposes of this demonstration, the only domain added is `localhost`. Make sure you make note of the `Site Key` & `Secret Key`.
+Register a new site with reCAPTCHA & select version 3 (https://www.google.com/recaptcha/admin/create) - for the purposes of this demonstration, the only domain added is `localhost`. Be sure to make note of the `Site Key` & `Secret Key`.
 
 ## Backend
 
-Instal sqlite3:
+Install sqlite3:
 
     sudo apt-get install sqlite3 libsqlite3-dev
 
-Django utilises its own `SECRET_KEY` that needs to be generated & obscured; The repo uses dotenv to obscure the key. Install by navigating to `\be\reCAPTCHAv3\` and type:
+Django utilises its own `SECRET_KEY` that needs to be generated & obscured; The repo uses dotenv to obscure the key. Install dotenv by navigating to `\be\reCAPTCHAv3\` and type:
 
     python3 pip install python-dotenv
 
@@ -31,7 +31,7 @@ Followed by the below to get a new key; Import the ` get_random_secret_key ` fun
 
     from django.core.management.utils import get_random_secret_key
 
-Then run the function to get the ket itself:
+Then run the function to get the key itself:
 
     get_random_secret_key()
 
@@ -49,7 +49,7 @@ Start the server shell:
 
     python3 manage.py shell
 
-Import insertion function:
+Import the insertion function for the key:
 
     from test_demo.models import SendKey
 
@@ -69,9 +69,13 @@ Print it:
 
     print(instance)
 
+Start the server with the below:
+
+    python3 manage.py runserver
+
 ## Frontend
 
-You need to add your google api site key to ` ./src./component/Main.jsx `: 
+You need to add your google api site key to ` ./fe/src/components/Main.jsx `: 
 
     <GoogleReCaptchaProvider reCaptchaKey="<api_site_key_here>">
         {load && <Result />}
