@@ -17,7 +17,7 @@ export default function Main() {
             <GoogleReCaptchaProvider reCaptchaKey="6LdIYyQqAAAAAGPIC7CuubHIDYXm-a1moGU46g_l">
                 {load && <Result />}
             </GoogleReCaptchaProvider>
-            <p className="text" style={{"margin-top": "10%"}}>This site is protected by reCAPTCHA and Google</p>
+            <p className="text" style={{"margintop": "10%"}}>This site is protected by reCAPTCHA and Google</p>
             <a className="link-button" target="_blank" rel="noreferrer" href='https://policies.google.com/privacy'>Privacy Policy</a>
             <br></br>
             <a className="link-button" target="_blank" rel="noreferrer" href='https://policies.google.com/terms'>Terms of Service</a>

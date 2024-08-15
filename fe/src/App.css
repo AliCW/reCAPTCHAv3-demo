@@ -65,7 +65,7 @@ html {
     margin-top: 5px;
     margin-bottom: 5px;
     color: rgb(255, 150, 232);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .link-button:hover {
