@@ -83,7 +83,7 @@ You need to add your google api site key to ` ./fe/src/components/Main.jsx `:
 
 Install the required packages by navigating to `/fe` and running:
 
-    npm install
+    npm init
 
 To start the frontend, run:
 
